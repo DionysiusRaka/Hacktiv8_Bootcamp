@@ -1,0 +1,83 @@
+body {
+    background-color: beige;
+}
+
+.logo {
+    display: flex;
+    background-color: aqua;
+}
+
+.navbar-brand {
+    float: left;
+}
+
+.content-profile {
+    background-color: beige;
+    padding: 30px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.container-profile {
+    background-color: white;
+    padding: 30px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.text-right {
+    padding-left: 50px;
+}
+
+.container-profile img {
+    border-radius: 50%;
+}
+
+.prof-text {
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.prof-text dt {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.prof-table {
+    font-size: 14px;
+    margin-left: 100px;
+    float: right;
+}
+
+.prof-table td {
+    padding-right: 20px;
+}
+
+.prof-table td:first-child {
+    font-weight: bold;
+}
+
+.container-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 25px;
+    display: flex;
+    width: 100%;
+}
+
+.p-form input {
+    width: 100%;
+}
+
+.fleksip{
+    display: flex;
+}
+
+form {
+    width: 100%;
+}
+
+.container-form button{
+    width: 100%;
+}
