@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input1">
+    <button onclick="reverseWord()">Submit</button>
+    <p id="result"></p>
+
+    <input type="text" id="inpArray">
+    <button onclick="arraySort()">Submit</button>
+    <p id="result2"></p>
+</body>
+
+<script>
+    function reverseWord() {
+        var input = document.getElementById("input1").value;
+        var result = "";
+
+        for (var i = input.length - 1; i >= 0; i--) {
+            result += input[i];
+        }
+        if (result == input) {
+            result = "Palindrome";
+        }
+
+        document.getElementById("result").innerHTML = result;
+    }
+    function arraySort() {
+        var arr = [];
+        var arr = document.getElementById("inpArray").value;
+        const split = arr.split(" ");
+        const splitInt = split.map(Number);
+        var res;
+
+        for (var i = 0; i < splitInt.length; i++) {
+            for (var j = 0; j < splitInt.length - i - 1; j++) {
+                if(splitInt[j] === splitInt[j+1]){
+                    splitInt[j+1]=1;
+                }
+                if (splitInt[j] > splitInt[j + 1]) {
+                    var checker;
+                    checker = splitInt[j];
+                    splitInt[j] = splitInt[j + 1];
+                    splitInt[j + 1] = checker;
+                }
+            }
+        }
+        res = splitInt[i-1] * splitInt[i-2] * splitInt[i-3];
+
+        document.getElementById("result2").innerHTML = res;
+    }
+</script>
+
+</html>
