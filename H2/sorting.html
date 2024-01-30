@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    const angka = [10, 40, 5, 15, 60, 38, 55];
+    var result = "";
+
+    for (var i = 0; i < angka.length; i++) {
+        for (var j = 0; j < angka.length - i - 1; j++) {
+            if (angka[j] > angka[j + 1]) {
+                var checker;
+                checker = angka[j];
+                angka[j] = angka[j + 1];
+                angka[j + 1] = checker;
+            }
+        }
+    }
+
+    angka.forEach((a) => {
+        result = result + a.toString() + " ";
+    })
+    document.getElementById("result").innerHTML = result;
+
+</script>
+
+</html>

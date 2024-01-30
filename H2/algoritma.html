@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Calculation</title>
+</head>
+
+<body>
+    <input type="text" name="uname" id="uname" placeholder="Username" />
+    <input type="password" name="pass" id="pass" placeholder="Password" />
+    <button type="button" id="submit" onclick="checkValidation()">Submit</button>
+    <script>
+        function checkValidation() {
+            let uname = document.getElementById("uname").value;
+            let pass = document.getElementById("pass").value;
+
+            if (uname === "admin" && pass === "password") {
+                alert("Sukses");
+                window.location.href = "D:/.BRI/Bootcamp/Tugas/H1/index.html";
+            }
+            else {
+                window.location.href = "google.com";
+            }
+        }
+    </script>
+
+    <br>
+    <br>
+
+    <input type="number" placeholder="Angka" id="angka">
+    <button id="sub2" onclick="starMaker()">Submit</button>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <script>
+        function starMaker() {
+            var angka = parseInt(document.getElementById("angka").value);
+            var tempString = "";
+            var tempBaru = "";
+            var tempSamaSisi = "";
+
+            for (var i = 1; i <= angka; i++) {
+                for (var j = angka; j >= 1; j--) {
+                    if (j <= i) tempString += "*";
+                    else tempString += "&nbsp;&nbsp;";
+                }
+                tempString += "<br>"
+            }
+
+            document.getElementById("result").innerHTML = tempString;
+
+            for (var i = 1; i <= angka; i++) {
+                for (var j = angka; j >= 1; j--) {
+                    if (j <= i) {
+                        if (j % 2) tempBaru += "*";
+                        else tempBaru += "#"
+                    }
+                    else tempBaru += "&nbsp;&nbsp;";
+                }
+                tempBaru += "<br>"
+            }
+            document.getElementById("result2").innerHTML = tempBaru;
+            for (var i = 1; i <= angka; i++) {
+                var spasi = "";
+                for (var j = 1; j <= angka - i; j++) {
+                    spasi += "&nbsp;&nbsp;";
+                }
+    
+                // Menambahkan bintang pada setiap baris
+                var bintang = "";
+                for (var k = 1; k <= 2 * i - 1; k++) {
+                    bintang += "*";
+                }
+    
+                tempSamaSisi += spasi;
+                tempSamaSisi += bintang;
+                tempSamaSisi += "<br>";
+            }
+            document.getElementById("result3").innerHTML = tempSamaSisi;
+        }
+
+    </script>
+</body>
+
+</html>
