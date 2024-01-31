@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-rbs5qxFJCg8rSBJ73rYUEIJSKWDSiWZXoEi+Jg0EZVI1tb2MZw0j2a9efstP5I7xj"
-        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 
 <body>
@@ -52,32 +49,32 @@
             <div class="container-profile">
                 <img src="profile.jpg" alt="" height="200px">
                 <div class="prof-text">
-                    <dt>Nile Seraphic Oasis Echo</dt>
+                    <dt id="bigName" class="defValue">Nile Seraphic Oasis Echo</dt>
                     <dd>Front-End Developer</dd>
-                    <button type="button" class="btn btn-primary">Kontak</button>
+                    <button type="button" class="btn btn-primary" id="shEdit">Edit</button>
                     <button type="button" class="btn btn-warning">Resume</button>
                 </div>
                 <div class="prof-table">
                     <table>
                         <tr>
                             <td>Availability</td>
-                            <td>Fulltime</td>
+                            <td class="defValue">Fulltime</td>
                         </tr>
                         <tr>
                             <td>Age</td>
-                            <td>17</td>
+                            <td class="defValue">17</td>
                         </tr>
                         <tr>
                             <td>Location</td>
-                            <td>Jakarta, Indonesia</td>
+                            <td class="defValue">Jakarta, Indonesia</td>
                         </tr>
                         <tr>
                             <td>Experience</td>
-                            <td>3</td>
+                            <td class="defValue">3</td>
                         </tr>
                         <tr>
                             <td>E-Mail</td>
-                            <td>email@gmail.com</td>
+                            <td class="defValue">email@gmail.com</td>
                         </tr>
                     </table>
                 </div>
@@ -87,42 +84,63 @@
         <br>
         <section class="fleksip">
             <div class="container-form">
-                <form action="">
+                <form id="editFrom">
                     <div class="form-group">
-                        <label for="inputAddress">Name</label>
-                        <input type="text" class="form-control" id="name">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Role</label>
-                        <input type="text" class="form-control" id="role">
+                        <label for="avail">Availability</label>
+                        <input type="text" class="form-control" id="availability" required>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Availability</label>
-                        <input type="text" class="form-control" id="availability">
+                        <label for="age">Age</label>
+                        <input type="number" class="form-control" id="age" required>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Age</label>
-                        <input type="text" class="form-control" id="age">
+                        <label for="loc">Location</label>
+                        <input type="text" class="form-control" id="location" required>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Location</label>
-                        <input type="text" class="form-control" id="location">
+                        <label for="exp">Years of Experience</label>
+                        <input type="number" class="form-control" id="exp" required>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Years of Experience</label>
-                        <input type="text" class="form-control" id="exp">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAddress2">E-Mail</label>
-                        <input type="text" class="form-control" id="email">
+                        <label for="email">E-Mail</label>
+                        <input type="text" class="form-control" id="email" required>
                     </div>
                     <div style="padding-top: 30px;">
-                        <button type="submit" class="btn btn-success ">Submit</button>
+                        <button type="submit" class="btn btn-success" id="btnSubmit">Submit</button>
                     </div>
                 </form>
             </div>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        const editFrom = document.getElementById("editFrom");
+        editFrom.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let formValue = document.getElementsByClassName("form-control");
+            let def = document.getElementsByClassName("defValue");
+           Array.from(formValue).forEach((element, index) => {
+                def[index].innerHTML = element.value;
+            });
+        }) 
+    
+        // function editForm() {
+        //     console.log("work");
+        //     // const submit = document.getElementById("btnSubmit");
+        //     let name = document.getElementById("name").value;
+        //     let role = document.getElementById("role").value;
+        //     let avail = document.getElementById("avail").value;
+        //     let age = document.getElementById("age").value;
+        //     let loc = document.getElementById("loc").value;
+        //     let exp = document.getElementById("exp").value;
+        //     let email = document.getElementById("email").value;
+    
+        //     console.log(name, role, avail);
+        // }
+    </script>
 </body>
-
 </html>
