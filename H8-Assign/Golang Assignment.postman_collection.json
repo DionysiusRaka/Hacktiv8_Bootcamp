@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "8313422b-33a6-4cfd-999c-902f90d5a4b6",
+		"name": "Golang Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10924423"
+	},
+	"item": [
+		{
+			"name": "CreateOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CustomerName\" : \"Asep Kopling\",\r\n    \"OrderList\":[\r\n        {\r\n            \"ItemCode\":\"ABC\",\r\n            \"Description\":\"Lemon 1\",\r\n            \"Quantity\": 20\r\n        },\r\n        {\r\n            \"ItemCode\":\"BCA\",\r\n            \"Description\":\"Produk 2\",\r\n            \"Quantity\": 32\r\n        },\r\n        {\r\n            \"ItemCode\":\"BRI\",\r\n            \"Description\":\"Produk 3\",\r\n            \"Quantity\": 13\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/createOrder",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/getOrder",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"getOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateOrder",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CustomerName\": \"Bagas Karbu\",\r\n    \"OrderList\": [\r\n        {\r\n            \"ItemCode\": \"BCA\",\r\n            \"Description\": \"Produksi 5 \",\r\n            \"Quantity\": 67\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/updateOrder/6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"updateOrder",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteOrder",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/deleteOrder/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"deleteOrder",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
