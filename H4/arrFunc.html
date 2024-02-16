@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input type="text" id="inpArray">
+    <button onclick="arraySort()">Submit</button> -->
+    <p id="result"></p>
+</body>
+
+<script>
+    var arr = [1, 2, 3, 2, 3, 2, "a", "a", "b", "a", "a", "2"];
+    // var arr = document.getElementById("inpArray").value;
+    // const split = arr.split(" ");
+    // const splitInt = split.map(Number);
+    var arrResult = {};
+    let hasil = 0;
+    let hitung = 0;
+
+    arr.forEach(function (element) {
+        if (arrResult.hasOwnProperty(element)) {
+            arrResult[element]++;
+        } else {
+            arrResult[element] = 1;
+        }
+        if (arrResult[element] > hitung) {
+            hitung = arrResult[element];
+            hasil = element;
+        }
+    });
+
+    console.log(arrResult);
+    document.getElementById("result").innerHTML = hasil + " sebanyak " + hitung;
+</script>
+
+</html>

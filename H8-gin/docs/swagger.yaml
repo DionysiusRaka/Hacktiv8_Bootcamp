@@ -1,0 +1,104 @@
+basePath: /
+definitions:
+  models.Car:
+    properties:
+      createdAt:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      price:
+        type: integer
+      updatedAt:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: email@swagger.io
+    name: NameJembut
+  description: Simple sample service using swagger
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  title: Car API
+  version: "1.0"
+paths:
+  /cars/:
+    post:
+      consumes:
+      - application/json
+      description: Create a new Car
+      parameters:
+      - description: create a new car
+        in: body
+        name: models.Car
+        required: true
+        schema:
+          $ref: '#/definitions/models.Car'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Car'
+      summary: Postdetails for a given Id
+      tags:
+      - cars
+  /cars/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a Car
+      parameters:
+      - description: ID of the car to be deleted
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Context
+      summary: Delet cars by Id
+      tags:
+      - cars
+    patch:
+      consumes:
+      - application/json
+      description: Update a Car
+      parameters:
+      - description: ID of the car to be updated
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Car'
+      summary: Update a car identified by the given Id
+      tags:
+      - cars
+  /cars/getCars:
+    get:
+      consumes:
+      - application/json
+      description: Get a car
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Car'
+      summary: Get all cars
+      tags:
+      - cars
+swagger: "2.0"
