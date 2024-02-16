@@ -1,4 +1,4 @@
-# MyGram - Photo Sharing and Commenting App
+# MyGram - Photo Sharing and Commenting App **(API ONLY)**
 
 ## Description
 
